@@ -7,11 +7,32 @@ public class InkRewrite : MonoBehaviour
 {
     public static event Action<Story> OnCreateStory;
 
+    public GameObject maincanvas;
+    public GameObject Gameplay;
+    public GameManager gManager;
+    public PlayerMovement ourplayer;
+
+    [Header ("Mad Talking")]
+    public bool Madtalk;
+    public string Pathfind;
+
     void Awake()
     {
-        // Remove the default message
         RemoveChildren();
-        StartStory();
+        if (Madtalk)
+        {
+            story = new Story(inkJSONAsset.text);
+            if (OnCreateStory != null) OnCreateStory(story);
+            //stop everything from moving
+            story.ChoosePathString(Pathfind);
+            RefreshView();
+        }
+        // Remove the default message
+        else
+        {
+            StartStory();
+        }
+        
     }
 
     // Creates a new Story object with the compiled story which we can then play!
@@ -74,9 +95,48 @@ public class InkRewrite : MonoBehaviour
     // Creates a textbox showing the the line of text
     void CreateContentView(string text)
     {
+        if (text == "Boo") //When telling sally she is capabile
+        {
+            ourplayer.WalkSelf = true;
+            Gameplay.SetActive(true);
+            maincanvas.SetActive(false);            
+        }
+
+        if (text == "Lead the way!") //Start Gameplay
+        {
+            Gameplay.SetActive(true);
+            maincanvas.SetActive(false);
+            if (Madtalk)
+            {
+                ourplayer.WalkSelf = false;
+                ourplayer.TalkToSallyButton.SetActive(false);
+                Time.timeScale = 1f;              
+            }
+        }
+
+        if (text == "Name") //setting up your name
+        {
+            text = "You must be " + gManager.playersName + "!";
+        }
+
+        if (text == "Backwards") //when displeaseing her about the name
+        {
+            Application.LoadLevel("MainMenu DISPLEASED");
+        }
+
+        if (text == "LeaveNow") //when displeaseing her about the name
+        {
+            if(Madtalk)
+            {
+                maincanvas.SetActive(false);
+                ourplayer.Resetmadness();
+            }
+        }
+
         Text storyText = Instantiate(textPrefab) as Text;
         storyText.text = text;
         storyText.transform.SetParent(mainTextSpawn, false);
+
     }
 
     // Creates a button showing the choice text
@@ -91,8 +151,8 @@ public class InkRewrite : MonoBehaviour
         choiceText.text = text;
 
         // Make the button expand to fit the text
-        HorizontalLayoutGroup layoutGroup = canvas.GetComponent<HorizontalLayoutGroup>();
-        layoutGroup.childForceExpandHeight = false;
+        //HorizontalLayoutGroup layoutGroup = canvas.GetComponent<HorizontalLayoutGroup>();
+        //layoutGroup.childForceExpandHeight = false;
 
         return choice;
     }
@@ -113,6 +173,7 @@ public class InkRewrite : MonoBehaviour
         }
     }
 
+    [Header("Main Stats")]
     [SerializeField]
     private TextAsset inkJSONAsset = null;
     public Story story;
