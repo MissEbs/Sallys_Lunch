@@ -16,7 +16,7 @@ public class InkRewrite : MonoBehaviour
     public bool Madtalk;
     public string Pathfind;
 
-    void Awake()
+    public void Start()
     {
         RemoveChildren();
         if (Madtalk)
