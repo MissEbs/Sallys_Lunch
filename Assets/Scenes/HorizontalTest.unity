@@ -23521,6 +23521,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f127f07090c817c48b9041a1a4ba4bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClearOnStart: 0
+  pissed: 0
+  MainMenu: {fileID: 0}
+  ClearMenu: {fileID: 0}
+  ContinueButton: {fileID: 0}
+  AngryTextName: {fileID: 0}
+  playersName: 
 --- !u!4 &786270579
 Transform:
   m_ObjectHideFlags: 0
@@ -26973,6 +26980,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbe5575b51a9694695422ae2b6a613d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maincanvas: {fileID: 0}
+  Gameplay: {fileID: 0}
+  gManager: {fileID: 0}
+  ourplayer: {fileID: 0}
+  Madtalk: 0
+  Pathfind: 
   inkJSONAsset: {fileID: 4900000, guid: e23032a7570456043a7831e6d50d060b, type: 3}
   canvas: {fileID: 999012572}
   mainTextSpawn: {fileID: 1096650707}
@@ -27759,6 +27772,7 @@ MonoBehaviour:
   speed: 2
   Move: 0
   inputVector: {x: -1, y: 0}
+  animator: {fileID: 0}
   rbody: {fileID: 1309409133}
   Buttons:
   - {fileID: 912418949}
@@ -27769,6 +27783,10 @@ MonoBehaviour:
   CircleSpot: {fileID: 2158646119265150057, guid: 4991b42d4a83e864ea687d480c3ce584,
     type: 3}
   Canvas: {fileID: 1219976666}
+  waitTime: {x: 0, y: 0}
+  WalkSelf: 0
+  TimerbeforeYouCantalktoHer: 0
+  TalkToSallyButton: {fileID: 0}
 --- !u!61 &1309409135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30509,6 +30527,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbe5575b51a9694695422ae2b6a613d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maincanvas: {fileID: 0}
+  Gameplay: {fileID: 0}
+  gManager: {fileID: 0}
+  ourplayer: {fileID: 0}
+  Madtalk: 0
+  Pathfind: 
   inkJSONAsset: {fileID: 4900000, guid: 78b39f9964889de4a8af154c73a37a8a, type: 3}
   canvas: {fileID: 1316895713}
   mainTextSpawn: {fileID: 1286658697}

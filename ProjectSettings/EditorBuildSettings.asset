@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 01cf072a50fb7194c860191f62fab21c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu DISPLEASED.unity
     guid: 7339773755b011c45ad2a65a1edb6670
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 7883b54b037e3bb4d9815e05a82f7354
+  - enabled: 1
+    path: Assets/Scenes/Level1_Horz.unity
+    guid: 4cbe772067a809f43841cf105b1b2ac5
   m_configObjects: {}

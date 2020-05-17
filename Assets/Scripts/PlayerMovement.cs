@@ -12,22 +12,20 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     bool[] activeAreas;
     float Timer = 0, Timer2 = 0;
-    [SerializeField] Animator animator;
+    [SerializeField] Animator animator = null;
 
     [Header("Touch Drag")]
     private GameObject CircleObject;
     [SerializeField] Rigidbody2D rbody = null;
     [SerializeField] GameObject[] Buttons = null; // up, right, down, left
     [SerializeField] Text displaycorner = null;
-    [SerializeField] GameObject CircleSpot = null;
-    [SerializeField] Transform Canvas = null;
  
     private Vector2 startPos, endPos, Direction; //touch start pos, touch end pos, swipe direction
 
     [Header("She angry")]
-    [SerializeField] Vector2 waitTime;
+    [SerializeField] Vector2 waitTime = Vector2.zero;
     public bool WalkSelf;
-    [SerializeField] float TimerbeforeYouCantalktoHer;
+    [SerializeField] float TimerbeforeYouCantalktoHer = 1;
     public GameObject TalkToSallyButton;
 
     private void Start()

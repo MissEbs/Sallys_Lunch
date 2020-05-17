@@ -12,7 +12,7 @@ public class FoodAI : MonoBehaviour
     Vector2 movement;
     bool[] activeAreas;
     [SerializeField] Rigidbody2D rbody = null;
-    [SerializeField] Vector2 waitTime;
+    [SerializeField] Vector2 waitTime = Vector2.zero;
 
     private void Start()
     {
