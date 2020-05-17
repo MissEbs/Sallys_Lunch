@@ -38,4 +38,43 @@ E
     **[...]
          ->Scene2
          
-        
+ === Scene3 ===
+E
++E
+    ->END
+ === Scene4 ===
+E
++E
+    ->END
+ === Scene5 ===
+E
++E
+    ->END
+ === Scene6 ===
+E
++E
+    ->END
+ === Scene7 ===
+E
++E
+    ->END
+ === Scene8 ===
+E
++E
+    ->END
+ === Scene9 ===
+E
++E
+    ->END
+ === Scene10 ===
+E
++E
+    ->END
+ === Scene11 ===
+E
++E
+    ->END
+ === Scene12 ===
+E
++E
+    ->END

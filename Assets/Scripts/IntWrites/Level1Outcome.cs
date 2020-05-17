@@ -27,6 +27,16 @@ public class Level1Outcome : MonoBehaviour
     public bool[] buttonsPressed;
     private bool[] buttonsPressedScene1 = null;
     private bool[] buttonsPressedScene2 = null;
+    private bool[] buttonsPressedScene3 = null;
+    private bool[] buttonsPressedScene4 = null;
+    private bool[] buttonsPressedScene5 = null;
+    private bool[] buttonsPressedScene6 = null;
+    private bool[] buttonsPressedScene7 = null;
+    private bool[] buttonsPressedScene8 = null;
+    private bool[] buttonsPressedScene9 = null;
+    private bool[] buttonsPressedScene10 = null;
+    private bool[] buttonsPressedScene11 = null;
+    private bool[] buttonsPressedScene12 = null;
 
     public void Start()
     {
@@ -49,36 +59,108 @@ public class Level1Outcome : MonoBehaviour
         ButtonSpots = newButtonPos; //new button spawn positions
 
         //need to save last buttons prefab
-        if (numberToSaveForBools == 1)//scene 1
-        {
-            buttonsPressedScene1 = buttonsPressed;
-        }
-        if (numberToSaveForBools == 2)
-        {
-            buttonsPressedScene2 = buttonsPressed;
-        }
+        if (numberToSaveForBools == 1)          //scene 1
+        {buttonsPressedScene1 = buttonsPressed;}
+        if (numberToSaveForBools == 2)          //scene 2
+        { buttonsPressedScene2 = buttonsPressed;}
+        if (numberToSaveForBools == 3)          //scene 3
+        { buttonsPressedScene3 = buttonsPressed; }
+        if (numberToSaveForBools == 4)          //scene 4
+        { buttonsPressedScene4 = buttonsPressed; }
+        if (numberToSaveForBools == 5)          //scene 5
+        { buttonsPressedScene5 = buttonsPressed; }
+        if (numberToSaveForBools == 6)          //scene 6
+        { buttonsPressedScene6 = buttonsPressed; }
+        if (numberToSaveForBools == 7)          //scene 7
+        { buttonsPressedScene7 = buttonsPressed; }
+        if (numberToSaveForBools == 8)          //scene 8
+        { buttonsPressedScene8 = buttonsPressed; }
+        if (numberToSaveForBools == 9)          //scene 9
+        { buttonsPressedScene9 = buttonsPressed; }
+        if (numberToSaveForBools == 10)          //scene 10
+        { buttonsPressedScene10 = buttonsPressed; }
+        if (numberToSaveForBools == 11)          //scene 11
+        { buttonsPressedScene11 = buttonsPressed; }
+        if (numberToSaveForBools == 12)          //scene 12
+        { buttonsPressedScene12 = buttonsPressed; }
+
         buttonsPressed = null; //clear buttons bool
 
         //loading new bools
         if (newScene == 1)//scene 1
-        {
-            if (buttonsPressedScene1 == null)
-            {
-                buttonsPressedScene1 = new bool[ButtonSpots.Length];
-            }
+        {   if (buttonsPressedScene1 == null)
+            {buttonsPressedScene1 = new bool[ButtonSpots.Length];}
             buttonsPressed = buttonsPressedScene1;
         }
         if (newScene == 2)//scene 2
         {
             if (buttonsPressedScene2 == null)
-            {
-                buttonsPressedScene2 = new bool[ButtonSpots.Length];
-            }
+            { buttonsPressedScene2 = new bool[ButtonSpots.Length]; }
             buttonsPressed = buttonsPressedScene2;
         }
-
+        if (newScene == 3)//scene 3
+        {
+            if (buttonsPressedScene3 == null)
+            { buttonsPressedScene3 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene3;
+        }
+        if (newScene == 4)//scene 4
+        {
+            if (buttonsPressedScene4 == null)
+            { buttonsPressedScene4 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene4;
+        }
+        if (newScene == 5)//scene 1
+        {
+            if (buttonsPressedScene5 == null)
+            { buttonsPressedScene5 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene5;
+        }
+        if (newScene == 6)//scene 1
+        {
+            if (buttonsPressedScene6 == null)
+            { buttonsPressedScene6 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene6;
+        }
+        if (newScene == 7)//scene 7
+        {
+            if (buttonsPressedScene7 == null)
+            { buttonsPressedScene7 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene7;
+        }
+        if (newScene == 8)//scene 8
+        {
+            if (buttonsPressedScene8 == null)
+            { buttonsPressedScene8 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene8;
+        }
+        if (newScene == 9)//scene 9
+        {
+            if (buttonsPressedScene9 == null)
+            { buttonsPressedScene9 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene9;
+        }
+        if (newScene == 10)//scene 10
+        {
+            if (buttonsPressedScene10 == null)
+            { buttonsPressedScene10 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene10;
+        }
+        if (newScene == 11)//scene 11
+        {
+            if (buttonsPressedScene11 == null)
+            { buttonsPressedScene11 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene11;
+        }
+        if (newScene == 12)//scene 12
+        {
+            if (buttonsPressedScene12 == null)
+            { buttonsPressedScene12 = new bool[ButtonSpots.Length]; }
+            buttonsPressed = buttonsPressedScene12;
+        }
         //refreash story?
-        RefreshView();
+        //RefreshView();
+        RemoveChildren();
     }
 
     // This is the main function called every time the story changes. It does a few things:
