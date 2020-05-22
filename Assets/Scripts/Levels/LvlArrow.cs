@@ -14,12 +14,14 @@ public class LvlArrow : MonoBehaviour
     public Transform[] newButtonSpots;
     [SerializeField] int lastSceneInt = 1;
     [SerializeField] int newSceneInt = 1;
-    [SerializeField] float newSpeed = 1;
+    [SerializeField] float newSpeed = 0;
 
     [Header("Need to touch")]
     [SerializeField] Lvl1CharMovement characterMove = null;
     [SerializeField] Level1Outcome ourTalker = null;
     [SerializeField] CameraMovement camTalk = null;
+    [SerializeField] SceneStats TurnOffThisSceneParticles;
+    [SerializeField] SceneStats TurnONThisSceneParticles;
 
     public void ChangeingZones()
     {
@@ -29,10 +31,22 @@ public class LvlArrow : MonoBehaviour
         //Sets players new home pos 
         characterMove.HomePos = newHomepos;
         //speed the character up
-        characterMove.speed = newSpeed;
+        if (newSpeed != 0)
+        {
+            characterMove.speed = newSpeed;
+        }
         //needs to make character move into the next zone
         characterMove.Move = true;
         //Starts next story Knott thingy, set new button spots, set buttons pressed
         ourTalker.SetStoryPos(newPathString, newButtonSpots, lastSceneInt, newSceneInt);
+        //change particle effects
+        if (TurnOffThisSceneParticles != null)
+        {
+            TurnOffThisSceneParticles.TurnOffParticles();
+        }
+        if (TurnONThisSceneParticles != null)
+        {
+            TurnONThisSceneParticles.TurnOnParticles();
+        }
     }
 }

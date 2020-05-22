@@ -6,7 +6,7 @@ using UnityEngine;
 //[RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour
 {
-    void Start()
+    public void ToBeStarted()
     {
         // set the desired aspect ratio (the values in this example are
         // hard-coded for 16:9, but you could make them into public
@@ -54,7 +54,7 @@ public class CameraMovement : MonoBehaviour
     public Vector2 maxPosition = Vector2.zero; //x and y
     public Vector2 minPosition = Vector2.zero;
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (transform.position != target.position) //if position is not at target position...
         {

@@ -77,6 +77,12 @@ public class FoodAI : MonoBehaviour
                 StartCoroutine(movementTime());
             }
         }
+
+        if (collision.name == "Player") //if hitting the player
+        {
+
+            Application.LoadLevel("Level1_Horz");
+        }
     }
 
     IEnumerator movementTime()

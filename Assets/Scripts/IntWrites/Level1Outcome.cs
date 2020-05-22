@@ -24,6 +24,7 @@ public class Level1Outcome : MonoBehaviour
     public Lvl1CharMovement myplayer;
     public Animator ourplayerAni;
     public Transform[] ButtonSpots;
+    [SerializeField] private CameraMovement cam;
     public bool[] buttonsPressed;
     private bool[] buttonsPressedScene1 = null;
     private bool[] buttonsPressedScene2 = null;
@@ -40,9 +41,12 @@ public class Level1Outcome : MonoBehaviour
 
     public void Start()
     {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;      
         RemoveChildren();
 
-            StartStory();
+
+        StartStory();
+        //cam.ToBeStarted();
     }
 
     // Creates a new Story object with the compiled story which we can then play!
@@ -227,24 +231,26 @@ public class Level1Outcome : MonoBehaviour
         if (choice.text.StartsWith(">"))
         {
             buttonsPressed[choice.index] = true;
-        }
 
-        if (choice.text.Substring(1,1) == "A")
-        {
-            string checkingstring = choice.text.Substring(2,2);
-            if (checkingstring == "01") //open fridge
+            if (choice.text.Substring(1, 1) == "A")
             {
-                Debug.Log("Opened fridge");
-                RemoveChildren();
-                ourplayerAni.enabled = true;
-                ourplayerAni.Play("ToFridge");
+                string checkingstring = choice.text.Substring(2, 2);
+                if (checkingstring == "01") //open fridge
+                {
+                    Debug.Log("Opened fridge");
+                    RemoveChildren();
+                    ourplayerAni.enabled = true;
+                    ourplayerAni.Play("ToFridge");
 
-            }
-            else
-            {
-                RefreshView();
+                }
+
+                else
+                {
+                    RefreshView();
+                }
             }
         }
+        
         else if (choice.text.StartsWith("...")) //when pressing on ...
         {
             RemoveChildren();

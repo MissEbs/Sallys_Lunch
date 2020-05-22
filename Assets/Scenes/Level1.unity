@@ -2937,6 +2937,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2951,9 +2952,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6be7bae43e945a34aa494308e38acba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1309409132}
+  smoothing: 1
+  maxPosition: {x: -240, y: -25}
+  minPosition: {x: -248, y: -42}
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8138797a2d0bec848b9c2a9d37c57f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1309409132}
@@ -23467,9 +23484,6 @@ MonoBehaviour:
   - {fileID: 2105184079}
   - {fileID: 1167325706}
   displaycorner: {fileID: 1254055761}
-  CircleSpot: {fileID: 2158646119265150057, guid: 4991b42d4a83e864ea687d480c3ce584,
-    type: 3}
-  Canvas: {fileID: 1404341728}
   waitTime: {x: 0, y: 0.5}
   WalkSelf: 0
   TimerbeforeYouCantalktoHer: 10
