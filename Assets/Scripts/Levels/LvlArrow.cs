@@ -18,10 +18,11 @@ public class LvlArrow : MonoBehaviour
 
     [Header("Need to touch")]
     [SerializeField] Lvl1CharMovement characterMove = null;
-    [SerializeField] Level1Outcome ourTalker = null;
+    //[SerializeField] Level1Outcome ourTalker = null;
     [SerializeField] CameraMovement camTalk = null;
     [SerializeField] SceneStats TurnOffThisSceneParticles;
     [SerializeField] SceneStats TurnONThisSceneParticles;
+    [SerializeField] bool Left;
 
     public void ChangeingZones()
     {
@@ -35,10 +36,22 @@ public class LvlArrow : MonoBehaviour
         {
             characterMove.speed = newSpeed;
         }
+        //spawn player at the arrow spot
+        if (Left)
+        {
+            characterMove.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x + 0.5f, this.gameObject.transform.position.y, 0);
+        }
+        else
+        {
+            characterMove.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x - 0.5f, this.gameObject.transform.position.y, 0);
+        }
+        
         //needs to make character move into the next zone
         characterMove.Move = true;
+        
         //Starts next story Knott thingy, set new button spots, set buttons pressed
-        ourTalker.SetStoryPos(newPathString, newButtonSpots, lastSceneInt, newSceneInt);
+        //ourTalker.SetStoryPos(newPathString, newButtonSpots, lastSceneInt, newSceneInt);
+
         //change particle effects
         if (TurnOffThisSceneParticles != null)
         {
